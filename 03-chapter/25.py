@@ -1,0 +1,16 @@
+# coding: utf-8
+import mymodule as m
+import re
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
+text = m.get_article_about_UK()
+base_info_text = re.search("{{基礎情報 国\n(.+\n)*?}}", text.encode('utf-8'))
+dic = {}
+
+for line in base_info_text.group().split("\n"):
+    reg_list = re.search("\|(.+?) = (.+?)(\Z|<)", line.encode('utf-8'))
+    if reg_list:
+        dic[reg_list.group(1)] = reg_list.group(2)
+        print reg_list.group(1), reg_list.group(2)
