@@ -10,7 +10,7 @@ base_info_text = re.search("{{基礎情報 国\n(.+\n)*?}}", text.encode('utf-8'
 dic = {}
 
 for line in base_info_text.group().split("\n"):
-    reg_list = re.search("\|(.+?) = (.+?)(\Z|<)", line.encode('utf-8'))
+    reg_list = re.search("\|(.+) = (.+)", line.encode('utf-8'))
     if reg_list:
-        dic[reg_list.group(1)] = reg_list.group(2)
-        print reg_list.group(1), reg_list.group(2)
+        dic[reg_list.group(1)] = reg_list.group(2).split("<ref>")[0]
+        print reg_list.group(1), dic[reg_list.group(1)]
