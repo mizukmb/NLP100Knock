@@ -1,0 +1,7 @@
+#!/bin/sh 
+
+question=$1
+
+python ${question}.py >> ${question}_ans.txt
+
+rm _ans.txt
