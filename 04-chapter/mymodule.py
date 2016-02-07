@@ -13,7 +13,6 @@ def get_morphs(string):
         dic["pos"] = token_list[1]
         dic["pos1"] = token_list[2]
 
-        print dic["surface"], dic["base"], dic["pos"], dic["pos1"]
         dicts.append(dic)
 
     return dicts
