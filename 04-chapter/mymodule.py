@@ -9,7 +9,7 @@ def get_morphs(string):
         dic = {}
         token_list = str(token).replace("	", ",").split(",")
         dic["surface"] = token_list[0]
-        dic["base"] = token_list[6]
+        dic["base"] = token_list[7]
         dic["pos"] = token_list[1]
         dic["pos1"] = token_list[2]
 
